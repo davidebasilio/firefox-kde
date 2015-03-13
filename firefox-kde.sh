@@ -8,7 +8,8 @@ if [ -d $FF_FOLDER/$ACTIVITY ]; then
 	echo "loading profile $ACTIVITY"
 else
 	echo "creating new profile for $ACTIVITY"
-        echo firefox -CreateProfile "$ACTIVITY $PROFDIR"
+	# this seems to be currently broken in FF 36.0.1.. You'll probably have to create the profile manually..
+        firefox -CreateProfile "$ACTIVITY $PROFDIR"
 	echo $?
 fi
 
