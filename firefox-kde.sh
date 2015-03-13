@@ -32,9 +32,9 @@ firefox -P $ACTIVITY -remote "ping()" &> /dev/null
 p=$?
 if [ $p == 0 ]; then # profile already open
 	# kdialog --msgbox "/usr/bin/firefox -P $ACTIVITY -remote \"openURL($url,new-tab)\""
-	/usr/bin/firefox -P $ACTIVITY -remote "openURL($url,new-tab)" &> /tmp/firefox-kde.log
+	/usr/bin/firefox -P $ACTIVITY -remote "openURL($url,new-tab)" &> /tmp/firefox-kde.log &
 else # open new instance
 	# kdialog --msgbox "/usr/bin/firefox -P $ACTIVITY -new-instance $url"
-	/usr/bin/firefox -P $ACTIVITY -new-instance $ur &> /tmp/firefox-kde.logl
+	/usr/bin/firefox -P $ACTIVITY -new-instance $ur &> /tmp/firefox-kde.log &
 fi
 
